@@ -9,6 +9,10 @@ class Word
     @id = id || @@rrows += 1
   end
 
+  def save
+    @@words[self.id] = Word.new(self.name,self.id)
+  end
+
   def self.clear
     @@words = {}
     @@rows = 0
