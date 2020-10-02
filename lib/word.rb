@@ -6,7 +6,7 @@ class Word
 
   def initialize(name, id)
     @name = name
-    @id = id || @@rrows += 1
+    @id = id || @@rows += 1
   end
 
   def save
@@ -16,6 +16,10 @@ class Word
   def self.clear
     @@words = {}
     @@rows = 0
+  end
+
+  def self.find(id)
+    @@words[id]
   end
 
 end
